@@ -290,7 +290,6 @@ app.post("/todos/", async (request, response) => {
               response.status(400);
               response.send("Invalid Todo Priority");
               }
-     }
 });
 
 
