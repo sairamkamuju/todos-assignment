@@ -392,7 +392,7 @@ app.put("/todos/:todoId/", async (request,response) => {
                 category = '${category}',
                 due_date = '${dueDate}'
                 WHERE 
-                id = ${todoId}';`;
+                id = ${todoId};`;
 
                 await db.run(updateTodo);
                 response.send("Category Updated");
@@ -416,7 +416,7 @@ app.put("/todos/:todoId/", async (request,response) => {
                 category = '${category}',
                 due_date = '${dueDate}'
                 WHERE 
-                id = ${todoId}';`;
+                id = ${todoId};`;
 
                 await db.run(updateTodo);
                 response.send("Due Date Updated");
@@ -430,7 +430,7 @@ app.put("/todos/:todoId/", async (request,response) => {
 
 
 
-app.delete("todos/:todoId/", async (request,response) => {
+app.delete("/todos/:todoId/", async (request,response) => {
     const {todoId} = request.params;
     const deleteTodoQuery = `
     DELETE FROM todo WHERE id = ${todoId};`;
